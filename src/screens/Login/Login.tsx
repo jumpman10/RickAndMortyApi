@@ -13,7 +13,7 @@ interface Props extends StackScreenProps <any , any>{};
 
 const Login = ({navigation}  : Props) => {
 
-  const { opacity, position, fadeIn, } = useAnimation();
+  const { opacity, fadeIn, } = useAnimation();
   
   const { mail, onChange, password } = useForm({
     password: '',
@@ -60,23 +60,20 @@ return (
                                 <Animated.Image style={{ 
                                           ...styles.logo,                                        
                                           opacity,
-                                          transform: [{
-                                            translateY: position
-                                        }]
+
                                       }}
                                       source={require('../../assest/Rick-and-Morty-removebg-preview.png')}/>     
                                 <Animated.View style={{ 
                                           ...styles.inputsPosition,
                                           opacity,
-                                          transform: [{
-                                            translateY: position
-                                        }]
+        
                                       }}>
                                     <TextInput
                                       style={styles.input}
                                       placeholder="email"
                                       onChangeText={ (value) => onChange( value, 'mail' ) }
                                       value={mail}
+                                      placeholderTextColor='rgba(255,255,255,0.7)'
                                     >
                                     </TextInput>
                                     <TextInput
@@ -86,15 +83,14 @@ return (
                                       value={password}
                                       autoCorrect={false}
                                       secureTextEntry={true}
+                                      placeholderTextColor='rgba(255,255,255,0.7)'
                                       >                            
                                     </TextInput>
                                 </Animated.View>
                                 <Animated.View style={{ 
                                           ...styles.positionBtnLogin,
                                           opacity,
-                                          transform: [{
-                                            translateY: position
-                                        }]
+
                                       }}>
                                     <TouchableOpacity style={{width: 250,height: 50,}}
                                     onPress={()=> onLogin()}

@@ -54,6 +54,8 @@ return (
                                  onChangeText={ (value) => onChange( value, 'name' ) }
                                  value={name}
                                  maxLength={25}
+                                 placeholder="name"
+                                 placeholderTextColor='rgba(255,255,255,0.4)'
                                 >    
                                 </TextInput>
                                 <Text style={{marginTop:10,color:'white'}}>Surname</Text>
@@ -61,7 +63,9 @@ return (
                                 style={styles.inputs}
                                 onChangeText={ (value) => onChange( value, 'surname' ) }
                                 value={surname}
-                                maxLength={25}>
+                                maxLength={25}
+                                placeholder="surname"
+                                placeholderTextColor='rgba(255,255,255,0.4)'>
                                 </TextInput>
                                 <Text style={{marginTop:10,color:'white'}}>Phone</Text>
                                 <TextInput
@@ -69,7 +73,9 @@ return (
                                  onChangeText={ (value) => onChange( value, 'phone' ) }
                                  value={phone}
                                  keyboardType='numeric'
-                                 maxLength={15}>
+                                 maxLength={15}
+                                 placeholder="phone"
+                                 placeholderTextColor='rgba(255,255,255,0.4)'>
                                 </TextInput>
                                
                             </View>

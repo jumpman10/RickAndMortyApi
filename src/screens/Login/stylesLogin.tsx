@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
       paddingHorizontal: 10,
       paddingVertical:10,
       borderColor:'rgba(255,255,255,0.4)',
+      color:'white'
     },
     inputsPosition:{
       position: 'absolute',
