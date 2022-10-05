@@ -1,0 +1,56 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    img:{
+        width:200,
+        height:200,
+        borderRadius:100
+    },
+    name:{
+        fontSize:35,
+        textAlign:'center',
+        fontFamily:'get_schwifty',
+        color:'white',
+        backgroundColor:'black'
+    },
+    background:{
+        flex:1,
+        opacity:0.9
+    },
+    textData:{
+        fontSize:20,
+        textAlign:'center',
+        fontFamily:'get_schwifty',
+        color:'white',
+        backgroundColor:'black'
+    },
+    textDatasmall:{
+        fontSize:17,
+        textAlign:'left',
+        fontFamily:'get_schwifty',
+        color:'white',
+        backgroundColor:'black'
+    },
+    textLogout:{
+        fontSize:17,
+        textAlign:'center',
+        fontFamily:'get_schwifty',
+        color:'white',
+        backgroundColor:'black'
+    },
+    back:{
+        position:'absolute',
+        top:'3%',
+        left:'7%',
+    },
+    edit:{
+        position:'absolute',
+        top:'3%',
+        right:'7%',
+    }
+})
