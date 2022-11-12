@@ -30,12 +30,7 @@ const CharacterList = ({ navigation, route }: Props) => {
         source={require('../../assest/fondo3.jpg')}
         style={styles.image}
         resizeMode="cover">
-             <View style={styles.header}>
-                     <View style={styles.logoPosition}>
-                         <Image source={require('../../assest/Rick-and-Morty-removebg-preview.png')}
-                                 style={styles.logo}/>
-                     </View>
-            </View>
+
 
             {
               isLoading
@@ -54,9 +49,15 @@ const CharacterList = ({ navigation, route }: Props) => {
              keyExtractor={ (character) => character.id.toString() }
              showsVerticalScrollIndicator={ false }
              numColumns={ 2 }
-                    style={{marginTop:90}}
+           
              renderItem={ ({ item }) => ( <FlatListCharacter characters={item}/>) }
-
+             ListHeaderComponent={             
+             <View style={styles.header}>
+             <View style={styles.logoPosition}>
+                 <Image source={require('../../assest/Rick-and-Morty-removebg-preview.png')}
+                         style={styles.logo}/>
+             </View>
+             </View>}            
 
              ListFooterComponent={(  
                 

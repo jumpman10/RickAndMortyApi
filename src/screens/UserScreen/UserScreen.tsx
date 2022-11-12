@@ -1,39 +1,44 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
-import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { Animated, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { RickAndMortyApi } from '../../api/RickAndMortyApi';
 import { ModalEdit } from '../../components/ModalEdit';
 import { AuthContext } from '../../context/AuthContext/authContext';
+import { useAnimation } from '../../hooks/useAnimation';
+import { useDataUser } from '../../hooks/useDataUser';
 import { RootStackParams } from '../../navigation/StackNavigator';
 import { styles } from './styleUserScreen';
 
 
 interface Props extends StackScreenProps<RootStackParams,'UserScreen'>{};
-
+const config = {
+    headers:{'x-api-key':'7HckdEx0dx67Kor9pPGAB7WtYCyd3r5J70Sp0smo'}
+  };
 
 export const UserScreen = ({ navigation, route }: Props) => {
+
     const {user,userId} = useContext(AuthContext)
     const[visible, setVisible] = useState(false)
+    const {information,isLoading } = useDataUser()
     const {logOut} = useContext(AuthContext);
-    const[information,setInformation]=useState([])
-    const config = {
-        headers:{'x-api-key':'7HckdEx0dx67Kor9pPGAB7WtYCyd3r5J70Sp0smo'}
-      };
-    const info= async()=>{
-        const resp = await axios.get(`https://razbaqr77h.execute-api.sa-east-1.amazonaws.com/prod/user/${userId}`,config)
-        setInformation(resp.data)
-    }
 
-    const close = ()=>{
+
+ 
+  const close = ()=>{
         navigation.navigate('CharacterList')
         setVisible(false)
     }
     
-    useEffect(() => {
-        info()
-        }, []);
-   return (
+
+   
+const { opacity, fadeIn,} = useAnimation();
+  
+
+
+        return (
+
     <ImageBackground 
     source={require('../../assest/userfondo.jpg')}
     resizeMode='cover'
@@ -50,10 +55,17 @@ export const UserScreen = ({ navigation, route }: Props) => {
                     <Icon name="pencil-outline" size={30} color="white"/>
                 </TouchableOpacity>
             </View>
-            <View style={{alignItems:'center'}}>
+            <View style={{alignItems:'center',width:'75%',backgroundColor:'rgba(0,0,0,0.4)',height:'45%'}}>
             
-                <View style={{marginTop:'5%'}}>
-                    <Text style={styles.textData}>{JSON.stringify(information,null,3)}</Text>
+                <View style={{marginVertical:'5%',flex:1, justifyContent:'space-between'}}>
+                    <Text style={{color:'white'}}>Name:</Text>
+                    <Text style={styles.textData}>{information.name}</Text>
+                    <Text style={{color:'white'}}>Surname:</Text>
+                    <Text style={styles.textData}>{information.surname}</Text>
+                    <Text style={{color:'white'}}>Mail:</Text>
+                    <Text style={styles.textData}>{information.mail}</Text>
+                    <Text style={{color:'white'}}>Phone:</Text>
+                    <Text style={styles.textData}>{information.phone}</Text>
                 </View>
             </View>
             <View style={{marginTop:'8%'}}>

@@ -7,8 +7,8 @@ export const styles = StyleSheet.create({
         alignItems:'center'
     },
     img:{
-        width:200,
-        height:200,
+        width:100,
+        height:100,
         borderRadius:100
     },
     name:{
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
         textAlign:'center',
         fontFamily:'get_schwifty',
         color:'white',
-        backgroundColor:'black'
+        backgroundColor:'black',
     },
     textDatasmall:{
         fontSize:17,

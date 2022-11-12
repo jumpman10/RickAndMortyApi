@@ -23,8 +23,6 @@ export const styles = StyleSheet.create({
       flexDirection:'row',
       alignItems:'center',
       justifyContent:'center',
-      position:'absolute',
-      zIndex:999,
       backgroundColor:'rgba(139, 207, 33, 0.3)'
     },
     footer:{
@@ -37,9 +35,9 @@ export const styles = StyleSheet.create({
     },
     footerItem:{
         alignItems:'center',
-        backgroundColor:'rgba(255,255,255,0.5)',
-        width:70,
-        borderRadius:20
+        backgroundColor:'rgba(255,255,255,1)',
+        width:50,
+        borderRadius:50
     },
     img:{
       width:100,

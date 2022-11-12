@@ -53,7 +53,7 @@ export const CharacterScreen = ({ navigation, route }: Props) => {
                     style={styles.image}
                     resizeMode="contain"/>
                 </View> 
-                <View style={{width:'90%'}}>
+                <View style={{width:'90%',marginTop:5}}>
                   <Text style={styles.text}>Species :  { character.species}</Text>
                   <Text style={styles.text}>Gender :  {character.gender}</Text>
                   <Text style={styles.text}>Status :  {character.status}</Text>
@@ -63,7 +63,7 @@ export const CharacterScreen = ({ navigation, route }: Props) => {
                 </View>
                 <TouchableOpacity onPress={()=>setVisible(true)} 
                 style={styles.episodes} >
-                  <Text style={styles.text}>Episodes</Text>
+                  <Text style={{...styles.text, backgroundColor:'rgba(0,0,0,0)'}}>Episodes</Text>
                   <Icon name="chevron-up-circle-outline" size={30} color="white"/>
                 </TouchableOpacity>
               </View>

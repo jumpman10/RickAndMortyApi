@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     },
     imagePosition:{
       alignItems:'center',
-      marginTop:30
+      marginTop:20
     },
     name:{
       fontSize:45,
@@ -47,7 +47,8 @@ export const styles = StyleSheet.create({
       fontSize:25,
       fontFamily:'get_schwifty',
       textAlign:'center',
-      color:'white'
+      color:'white',
+      backgroundColor:'rgba(0,0,0,0.5)'
     }, 
     textModal:{
       fontSize:18,

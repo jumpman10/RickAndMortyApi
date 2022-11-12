@@ -72,9 +72,7 @@ export const AuthProvider = ({children} : any) => {
                 }
             })
 
-            await AsyncStorage.setItem('userId', resp.data.userId,)
-
-
+            await AsyncStorage.setItem('userId', resp.data.userId)
 
         } catch (error) {
             console.log(error)
